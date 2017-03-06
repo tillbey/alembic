@@ -18,7 +18,7 @@ exclude:
 - Gemfile.lock
 - demo/*
 - alembic-jekyll-theme.gemspec
-["demo/*", "lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+
 # 2. Installed Gems
 gems:
 - jekyll-sitemap
