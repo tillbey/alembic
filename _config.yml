@@ -142,17 +142,14 @@ sharing_links:
   LinkedIn: "#0077B5"
   tumblr: "#36465D"
   Reddit: "#FF4500"
-  Hacker News: "#ff6600"
-  Designer News: "#2D72D9"
   Email: ""
 
 
-# put your disqus here
-disqus_shortname:
-reading_time:     true # if true, shows the estimated reading time for a post
-words_per_minute: 200
-logo:             images/logo.png # logo visible in the topbar
-excerpt_separator: <!--more-->
+# # put your disqus here
+# disqus_shortname:
+# reading_time:     true # if true, shows the estimated reading time for a post
+# words_per_minute: 200
+# excerpt_separator: <!--more-->
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
 
@@ -175,15 +172,15 @@ owner:
   # GitHub nick for use in follow button in author block.
   github: aron-bordin
 
-
-# Social networking links used in author block underneath posts. Update and remove as you like.
-social:
-  - title: "github"
-    url: "https://github.com/aron-bordin"
-  - title: "linkedin"
-    url: "https://br.linkedin.com/in/aronbordin"
-  - title: "youtube"
-    url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
+#
+# # Social networking links used in author block underneath posts. Update and remove as you like.
+# social:
+#   - title: "github"
+#     url: "https://github.com/aron-bordin"
+#   - title: "linkedin"
+#     url: "https://br.linkedin.com/in/aronbordin"
+#   - title: "youtube"
+#     url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
 
 # if true, shows the floatting share buttons
 float_share: true
