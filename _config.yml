@@ -18,7 +18,7 @@ exclude:
 - Gemfile.lock
 - demo/*
 - alembic-jekyll-theme.gemspec
-
+["demo/*", "lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
 # 2. Installed Gems
 gems:
 - jekyll-sitemap
@@ -47,10 +47,15 @@ social: # jekyll-seo-tag > social overrides
 
 # 4. Jekyll settings
 sass:
+  sass_dir: _sass
   style: compressed # Style compression
 permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
 excerpt_separator: <!-- more --> # Marks end of excerpt in posts
 timezone: Europe/London # Timezone for blog posts and alike
+locale:      en_US
+future:      true
+highlighter: rouge
+markdown:    kramdown
 
 # 5. Collections
 collections:
@@ -91,6 +96,26 @@ disqus: "alembic-1"
 avatarurl: "https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c" # Uses avatars for favicons to get multple sites, eg Gravatar, Twitter, GitHub
 
 # 8. Site navigation
+menu:
+  - title: 'Home'
+    url: '/'
+  - title: 'Fork'
+    url: 'http://github.com/aron-bordin/neo-hpstr-jekyll-theme'
+  - title: 'Install'
+    url: 'http://github.com/aron-bordin/neo-hpstr-jekyll-theme#installation'
+  - title: 'Tags'
+    url: '/tags'
+  - title: 'Categories'
+    url: '/categories'
+    type: 'categories'
+  - title: 'Favorites'
+    url: '#'
+    submenu:
+      - title: 'Code Highlighter'
+        url: '/intro/code-highlighting-post/'
+      - title: 'Sample Post'
+        url: '/intro/sample-post/'
+
 navigation_header:
   Home: /
   Elements: /elements/
@@ -120,3 +145,50 @@ sharing_links:
   Hacker News: "#ff6600"
   Designer News: "#2D72D9"
   Email: ""
+
+
+# put your disqus here
+disqus_shortname:
+reading_time:     true # if true, shows the estimated reading time for a post
+words_per_minute: 200
+logo:             images/logo.png # logo visible in the topbar
+excerpt_separator: <!--more-->
+# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
+# When testing locally leave blank or use http://localhost:4000
+
+# draw your top menu here
+# each item must have a title and a url.
+#   To list post categories. use type: 'categories'
+#   To create sub categories. add a submenu item
+# See the example
+
+
+# Owner/author information
+owner:
+  name:           Your name
+  site:           http://aronbordin.com
+  avatar:         images/avatar.jpg
+  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
+  email:          you@email.com
+  # Twitter nick for use in Twitter cards and follow button.
+  twitter: aron_bordin # if no twitter in this config, the twitter follow button will be removed
+  # GitHub nick for use in follow button in author block.
+  github: aron-bordin
+
+
+# Social networking links used in author block underneath posts. Update and remove as you like.
+social:
+  - title: "github"
+    url: "https://github.com/aron-bordin"
+  - title: "linkedin"
+    url: "https://br.linkedin.com/in/aronbordin"
+  - title: "youtube"
+    url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
+
+# if true, shows the floatting share buttons
+float_share: true
+
+# Format titles with titlecase?
+titlecase: true
+
+include: [".htaccess"]
