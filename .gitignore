@@ -6,3 +6,4 @@ Gemfile.lock
 **/Gemfile.lock
 codekit-config.json
 *.gem
+*.log
