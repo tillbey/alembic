@@ -154,3 +154,158 @@ figure.center img{
   border: 1px solid $comp-color;
   @include rounded(4px);
 }
+
+// Video and map embeds
+.video,
+.map {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.map {
+  padding-bottom: 70%;
+}
+
+.figure,
+.video,
+.map {
+  margin-bottom: .8rem;
+}
+
+audio,
+video {
+  width: 100%;
+}
+
+
+// Form elements and buttons
+button,
+.button,
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="submit"],
+textarea {
+  padding: .6rem 1.2rem;
+  margin-bottom: .6rem;
+  transition: color .1s, background-color .1s, border .1s;
+  line-height: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  .icon {
+    margin: 0 0 .35rem;
+  }
+}
+
+input[type="submit"],
+button,
+.button {
+  cursor: pointer;
+  display: inline-block;
+  background: $accent-color;
+  position: relative;
+  transition: box-shadow .1s;
+  will-change: box-shadow;
+  box-shadow: inset 0 0 0 2rem transparent;
+  &:hover {
+    box-shadow: inset 0 0 0 2rem rgba(0,0,0,0.2);
+  }
+  &:active,
+  &:focus {
+    box-shadow: inset 0 0 0 2rem rgba(0,0,0,0.4);
+  }
+}
+
+a,
+button,
+.button,
+input,
+textarea {
+  &:focus,
+  &:hover:focus {
+    outline: solid .12rem invert($accent-color);
+  }
+}
+
+a:hover:focus {
+  outline: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea {
+  width: 100%;
+  border: 1px solid $caption-color ;
+  &:hover {
+    border-color: darken($caption-color , 20%);
+  }
+}
+
+textarea {
+    resize: vertical;
+}
+
+label {
+  @include baseline($fontsize: zeta, $font: $base-font, $lineheight: 2, $below: 2, $breakpoint: all);
+}
+
+code {
+  padding: .12rem .2rem;
+}
+
+pre code {
+  padding: 0;
+}
+
+.required {
+  color: red;
+}
+
+::-webkit-input-placeholder {
+  color: darken($caption-color , 30%);
+}
+::-moz-placeholder {
+  color: darken($caption-color , 30%);
+}
+:-ms-input-placeholder {
+  color: darken($caption-color , 30%);
+}
+:-moz-placeholder {
+  color: darken($caption-color , 30%);
+}
+
+::selection {
+  background: $heading-color;
+  color: $background-color;
+  text-shadow: none;
+}
+
+// Sassline overrides
+.typeset {
+  .button,
+  button {
+    background-image: none;
+    text-shadow: none;
+    color: lighten(invert($body-color), 15%);
+    &:hover,
+    &:active,
+    &:focus {
+      background-image: none;
+      color: lighten(invert($body-color), 15%);
+    }
+  }
+  hr {
+    width: 100%;
+  }
+}

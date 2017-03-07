@@ -7,11 +7,12 @@
       <li class="header-item-title">
         <a href="{{site.url}}/">
           {% if site.logo %}
-            <img class="logo" src="{{site.url}}/{{ site.logo }}" alt="{{ site.title }}">
+            <img class="logo" src="{{site.url}}/assets/icons/{{ site.logo }}" alt="{{ site.title }}">
           {% endif %}
           <a href="{{site.url}}/" class="title"> {{ site.title }}</a>
         </a>
       </li>
+      <li class="header-item"><a href="{{ "/search" | relative_url }}"><h3><i class="fa fa-search"></i></h3></a></li>
       {% for menu in site.menu reversed %}
         {% assign class = nil %}
         {% if ((page.url contains menu.url and menu.url != '/') or (page.url == '/index.html' and menu.url == '/')) %}
@@ -43,7 +44,6 @@
             {% endif %}
         {% endif %}
       {% endfor %}
-      <li class="header-item"><a href="{{site.url}}/search"><h3><i class="fa fa-search"></i></h3></a></li>
     </ul>
   </div>
 
@@ -73,7 +73,3 @@
     {% endfor %}
   </ul>
 </nav>
-
-{% if site.owner.twitter %}
-  <a href="https://twitter.com/{{site.owner.twitter}}" class="btn btn-info button-twitter" data-show-count="false" data-size="large"><i class="fa fa-twitter"></i> <span> | Follow @{{site.owner.twitter}}</span></a>
-{% endif %}

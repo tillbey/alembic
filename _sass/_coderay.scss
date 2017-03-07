@@ -1,5 +1,5 @@
 .CodeRay {
-  font-family: $code-font;
+  font-family: map-get($code-font, regular);
   @include font(12);
   color: #d0d0d0;
   margin-bottom: 1.5em;

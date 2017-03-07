@@ -157,7 +157,7 @@
   @include breakpoint(break-3) {
 
     p {
-      @include sassline($fontsize: eta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: 3);
+      @include sassline($fontsize: eta, $font: $base-font, $lineheight: 2, $below: 2, $breakpoint: 3);
     }
 
     li {
@@ -168,7 +168,7 @@
   @include breakpoint(break-4) {
 
     p {
-      @include sassline($fontsize: eta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: 4);
+      @include sassline($fontsize: eta, $font: $base-font, $lineheight: 2, $below: 2, $breakpoint: 4);
     }
 
     li {
