@@ -19,25 +19,10 @@ body {
 
 // Main
 // --------------------------------------------------
-.entry,
-.hentry {
+.entry {
 	@include clearfix;
 	h1, h2, h3, h4, h5, h6, p, li {
 		word-wrap: break-word;
-	}
-}
-.hentry-dark {
-	background-color: $header-color;
-}
-.entry-content {
-	@include font-size(16);
-	// Dotted line underlines for links
-	p > a,
-	li > a {
-		border-bottom: 1px dotted lighten($link-color, 50);
-		&:hover {
-			border-bottom-style: solid;
-		}
 	}
 }
 
@@ -63,41 +48,19 @@ body {
   @include flex(0, 0, auto);
 }
 
-.content {
-  width: 100%;
-  @include breakpoint(break-1) {
-    width: 62%;
-    margin-right: 4%;
-    &--full {
-      width: 100%;
-      margin-right: 0%;
-      .figure--full {
-        left: 50%;
-      }
-    }
-    &--aside-left {
-      margin-right: 0;
-      margin-left: 4%;
-      @include order(2);
-      .figure--full {
-        left: 19.4%;
-      }
-    }
-  }
-}
-
-.share {
-  .button {
-    margin-right: .3rem;
-  }
-}
-
 .aside {
   max-width: 100%;
+	color: $text-color;
+	background-color: $base-color;
+	position: fixed;
+	margin-top: $menu-height + 20;
+	margin-left: 10px;
+	top: 0;
+	left: 0;
   @include breakpoint(break-1) {
     max-width: 34%;
     @include flex(1, 0, auto);
-    opacity: 0.5;
+    opacity: 0.8;
     transition: opacity .1s;
     &:hover {
       opacity: 1;
@@ -311,28 +274,45 @@ header .entry-meta {
 #menu{
   margin-bottom: 48px;
 }
-#post,
-#page {
-	.entry-content {
-		margin: 40px 2px 20px 2px;
-		padding: 10px 15px;
+.post,
+.page,
+.excerpt {
+		margin: 20px auto 20px auto;
+		padding: 0px 0px;
+		max-width: 800px;
 		background-color: $base-color;
 		box-shadow: 0 0 0 0, 0 6px 12px rgba($black,0.1);
-		@include rounded(3px);
-		@media #{$medium} {
-			margin-left: 10px;
-			margin-right: 10px;
-			padding: 20px 30px;
-		}
-		@media #{$large} {
-			max-width: 800px;
-			margin: 50px auto 30px auto;
-			padding: 50px 80px;
-			> p:first-child {
-				@include font-size(20);
+		@include rounded(5px);
+		// @media #{$medium} {
+		// 	margin-left: 10px;
+		// 	margin-right: 10px;
+		// 	padding: 20px 30px;
+		// }
+		// @media #{$large} {
+		// 	max-width: 800px;
+		// 	margin: 40px auto 20px auto;
+		// 	padding: 0px 0px;
+		// 	> p:first-child {
+		// 		@include font-size(20);
+		// 	}
+		// }
+
+		&--full {
+			width: 100%;
+			margin-right: 0%;
+			.figure--full {
+				left: 50%;
 			}
 		}
-	}
+		&--aside-left {
+			margin-right: 0;
+			margin-left: 4%;
+			@include order(2);
+			.figure--full {
+				left: 19.4%;
+			}
+		}
+
 	#disqus_thread {
 		margin: 40px 2px 20px 2px;
 		padding: 10px 15px;
@@ -355,6 +335,88 @@ header .entry-meta {
 		text-align: center;
 	}
 }
+
+.post,
+.page {
+	.feature {
+		padding: 0px 0px;
+		padding-top: 0rem;
+		padding-bottom: .4rem;
+		margin-bottom: 0rem;
+		text-align: center;
+		background: $accent-color;
+		background-size: cover;
+		background-position: center;
+		@include border-radius(5px, 0, 0, 5px);
+		@include flexbox;
+		.container {
+			min-height: 35vh;
+			max-width: 60%;
+			@include flex-direction(column);
+			@include justify-content(center);
+		}
+	}
+}
+
+.excerpt {
+	height: $doc-line-height*5px;
+	.feature {
+		max-height: 100%;
+		display: inline-block;
+		padding: 0px 0px;
+		padding-top: 0rem;
+		padding-bottom: .4rem;
+		margin-bottom: 0rem;
+		text-align: center;
+		object-fit: contain;
+		overflow: hidden;
+		float:left;
+		width: 25%;
+		background: $accent-color;
+		background-size: cover;
+		background-position: center;
+		@include border-radius(0, 0, 5px, 5px);
+		@include flexbox;
+		.container {
+			min-height: 35vh;
+			max-width: 60%;
+			@include flex-direction(column);
+			@include justify-content(center);
+		}
+	}
+	.content {
+		float: top;
+		padding: 0px 50px;
+		width: 75%;
+		height: $doc-line-height*3px;
+    overflow:hidden;
+	}
+}
+
+.content {
+  width: 90%;
+	padding: 50px;
+	@include font-size(16);
+  @include breakpoint(break-1) {
+    width: 100%;
+    margin-right: 4%;
+		p > a,
+		li > a {
+			border-bottom: 1px dotted lighten($link-color, 50);
+			&:hover {
+				border-bottom-style: solid;
+			}
+		}
+  }
+}
+
+.share {
+  .button {
+    margin-right: .3rem;
+  }
+}
+
+
 .entry-tags {
 	display: block;
 	margin-bottom: 6px;

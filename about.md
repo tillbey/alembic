@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: excerpt
 title: About
-share: true
+feature_image: "https://unsplash.it/1200/400?image=200"
 ---
+
+Modern design. Responsive templates for post, page, and post index `_layouts`. Looks great on mobile, tablet, and desktop devices. Gracefully degrades in older browsers. Compatible with Internet Explorer 8+ and all modern browsers. Sweet topbar animated menu with support for drop-downs.
 
 # Neo-HPSTR Jekyll Theme
 

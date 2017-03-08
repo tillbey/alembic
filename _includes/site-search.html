@@ -29,13 +29,20 @@
     function displayResults() {
         const resultsArray = findResults(this.value, pages);
         const html = resultsArray.map(item => {
+          // return `
+          //     <li class="item">
+          //         <article class="article  typeset">
+          //             <h4><a href="{{ site.url }}${item.url}" title="Result - ${item.title}">${item.title}</a></h4>
+          //             <p>${item.excerpt}</p>
+          //         </article>
+          //     </li>`;
           return `
-              <li class="item">
-                  <article class="article  typeset">
-                      <h4><a href="{{ site.url }}${item.url}" title="Result - ${item.title}">${item.title}</a></h4>
-                      <p>${item.excerpt}</p>
-                  </article>
-              </li>`;
+                <li class="item">
+                <a href="{{ site.url }}${item.url}" title="Result - ${item.title}">
+                {% include excerpt.html feature_image="${item.feature_image}" title="${item.title}" content="${item.excerpt}" %}
+                </a>
+                </li>
+                `;
         }).join('');
         if ((resultsArray.length == 0) || (this.value == '')) {
             resultsList.innerHTML = `<p>Sorry, nothing was found</p>`;

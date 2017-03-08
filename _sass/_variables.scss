@@ -34,7 +34,7 @@ $doc-line-height: 26;
 
 // Colors
 // --------------------------------------------------
-$base-color				 : rgba(209, 227, 255, 0.7);
+$base-color				 : rgba(255, 239, 202, 0.9);
 $header-color			 : rgba(#000,0.8);
 $caption-color    : lighten($header-color, 50%);
 $sub-item-color			 : rgba(#000, 0.1);
@@ -44,9 +44,9 @@ $menu-height			 : 50px;
 $menu-overflow			 : #2E2E2E;
 $body-color      		 : $base-color;
 $heading-color			 : #05bf85;
-$background-color		 : rgba(44, 130, 195, 0.7);
+$background-color		 : white;
 $code-background-color: darken($background-color, 5%);
-$accent-color				 : #05bf85;
+$accent-color				 : rgba(44, 130, 195, 0.7);
 $link-color 		     : rgba(#222,0.8);
 $hover-color				 : darken($link-color, 20);
 $visited-color			 : lighten($link-color, 20);

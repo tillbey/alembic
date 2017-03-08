@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<main class="main  container">
+
+	<div class="content">
+
+    <article class="article  article--page  typeset">
+
+			{% assign collectiondata = site.collections | where: "label", page.collectionpage | first %}
+			<h1>{{ collectiondata.title }}</h1>
+
+			{{ collectiondata.description | markdownify }}
+
+    </article>
+
+    {% include post-list.html %}
+
+  </div>
+
+  {% include site-aside.html %}
+
+</main>
+
+<!--
+<main>
+  {% for category in site.categories %}
+  	{% assign category_name = category | first %}
+  	<section class="section  typeset">
+  		<h2 id="{{ category_name | slugify }}">{{ category_name }}</h2>
+  		<ul class="list  list--posts">
+  			{% for page in site.categories[category_name] %}
+  				<li class="item  item--post">
+  				 	<article class="article  article--post  typeset">
+  					 	<h3><a href="{{ page.url }}" title="Post - {{ page.title }}">{{ page.title }}</a></h3>
+  						{% include post-meta.html %}
+  						{{ page.excerpt | markdownify | truncatewords: 60 }}
+  				 	</article>
+  			 </li>
+  		 {% endfor %}
+  		</ul>
+  		{% unless forloop.last %}<hr/>{% endunless %}
+  	</section>
+  {% endfor %}
+</main> -->
